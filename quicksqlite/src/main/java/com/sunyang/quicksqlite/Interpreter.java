@@ -6,9 +6,7 @@ import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * 解释器
- */
+
 public class Interpreter {
 
     public String getInsertSql(Table table, Object data) throws NoSuchFieldException {

@@ -2,9 +2,6 @@ package com.sunyang.quicksqlite.Table;
 
 import java.util.HashMap;
 
-/**
- * 数据表模型
- */
 public final class Table {
     private String tableName = "";
     private HashMap<String, String> fields;

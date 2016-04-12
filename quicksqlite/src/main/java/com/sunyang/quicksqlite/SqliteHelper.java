@@ -14,16 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 这个库的目的是提供一种快捷操作android上的sqlite数据库的手段。
- *
- * 一般来说，操作数据库都是先在数据库中建立表，然后再操作表。但是移动端需求变化快，频繁的调整会导致维护表很麻烦。当业务复杂
- * 度上升的时候，维护难度也在上升，因此在设计这个库的时候我采用了Entity framework的Code First思想。即在代码运行时定义表结构而
- * 不是先在数据库里面预先定义好表结构。
- *
- *
- *
- */
+
 public class SqliteHelper {
     private SQLiteDatabase mSqlliteDB;
     private final String mDBName = "_qs_database";
@@ -118,7 +109,8 @@ public class SqliteHelper {
 
     private <T> ArrayList<T> query(Query query, Class<T> clazz, Table table) {
         ArrayList<T> result = new ArrayList<T>();
-        try (Cursor c = mSqlliteDB.rawQuery(interpreter.getQuerySql(table, query == null ? null : query.toSql(clazz)), null)) {
+        Cursor c = mSqlliteDB.rawQuery(interpreter.getQuerySql(table, query == null ? null : query.toSql(clazz)), null);
+        try{
             while (c.moveToNext()) {
                 T temp = (T) Class.forName(clazz.getName()).newInstance();
                 for (Object o : table.getFields().entrySet()) {

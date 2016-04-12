@@ -2,9 +2,6 @@ package com.sunyang.quicksqlite.Bulider;
 
 import java.util.ArrayList;
 
-/**
- * 更新构造器
- */
 public class Update {
 
     private ArrayList<Set> setList = new ArrayList<>();

@@ -2,9 +2,7 @@ package com.sunyang.quicksqlite.Bulider;
 
 import java.util.ArrayList;
 
-/**
- * 查询构造器
- */
+
 public class Query {
     private ArrayList<Where> where = new ArrayList<>();
     private String[] opers = {"<", ">", "=", "!=", ">=", "<="};
@@ -36,7 +34,7 @@ public class Query {
             where.setValue(value);
             this.where.add(where);
         } else {
-            throw new RuntimeException("不支持操作符:" + operator);
+            throw new RuntimeException("This operator is not supported:" + operator);
         }
         return this;
     }
