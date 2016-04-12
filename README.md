@@ -9,8 +9,24 @@ ORM Framework based on Android Sqlite,Generate data sheet from object
 如果对象字段有变化,则会自动删除旧表及数据，然后重新生成新表，例如修改对象字段后插入新对象，
 插入时库检测到字段不匹配，则会删除旧表及旧数据，然后生成新表并插入数据.
 
+Maven
+===
+
+<dependency>
+  <groupId>com.sunyang.quicksqlite</groupId>
+  <artifactId>quicksqlite</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+
+Gradle
+===
+
+compile 'com.sunyang.quicksqlite:quicksqlite:1.0.0'
+
 
 简单示例：
+===
 
     insert:
         TestModel test = new TestModel();
