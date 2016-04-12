@@ -1,28 +1,28 @@
 # quicksqlite
-ORM Framework based on Android Sqlite,Generate data sheet from object
+  ORM Framework based on Android Sqlite,Generate data sheet from object
 
-基于android sqlite的ORM框架
-特点是由对象生成数据表
+    基于android sqlite的ORM框架
+    特点是由对象生成数据表
 
-采用对象式数据库访问方式及方法链式查询
-增删改查操作中均不用考虑数据表是否存在，框架会自主生产对应表
-如果对象字段有变化,则会自动删除旧表及数据，然后重新生成新表，例如修改对象字段后插入新对象，
-插入时库检测到字段不匹配，则会删除旧表及旧数据，然后生成新表并插入数据.
+    采用对象式数据库访问方式及方法链式查询
+    增删改查操作中均不用考虑数据表是否存在，框架会自主生产对应表
+    如果对象字段有变化,则会自动删除旧表及数据，然后重新生成新表，例如修改对象字段后插入新对象，
+    插入时库检测到字段不匹配，则会删除旧表及旧数据，然后生成新表并插入数据.
 
-Maven
-===
+# Maven
 
-<dependency>
-  <groupId>com.sunyang.quicksqlite</groupId>
-  <artifactId>quicksqlite</artifactId>
-  <version>1.0.0</version>
-  <type>pom</type>
-</dependency>
+    <dependency>
+      <groupId>com.sunyang.quicksqlite</groupId>
+      <artifactId>quicksqlite</artifactId>
+      <version>1.0.0</version>
+      <type>pom</type>
+    </dependency>
 
-Gradle
-===
+# Gradle
 
-compile 'com.sunyang.quicksqlite:quicksqlite:1.0.0'
+    dependencies {
+        compile 'com.sunyang.quicksqlite:quicksqlite:1.0.0'
+    }   
 
 
 简单示例：
