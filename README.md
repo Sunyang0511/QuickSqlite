@@ -37,10 +37,11 @@
         
     query:
         //使用Query查询链生成查询,不用考虑表是否存在,没有异常,不会报错,只要做好null值处理即可.
-        List<TestModel> temp = SqliteHelper.getInstance().get(TestModel.class, Query.build().filter("field2", "=", 2));
+        List<TestModel> temp = SqliteHelper.getInstance().get(TestModel.class, Query.build().
+        filter("field2", "=", 2));
         if (temp != null && temp.size() > 0)
             tv.setText(temp.get(0).getField1());
-    
+            
     update:
         TestModel test = new TestModel();
         test.setField1("字段全部修改了");
@@ -50,7 +51,8 @@
         //全量更新模式,所有字段均会被更新到数据库中
         SqliteHelper.getInstance().update(test, Query.build().filter("field2", "=", 2));
         //指定更新模式,使用Update类指定需要更新字段
-        SqliteHelper.getInstance().update(TestModel.class, Update.build().update("field1","更新指定字段"),Query.build().filter                  ("field2","=",2));
+        SqliteHelper.getInstance().update(TestModel.class, Update.build().
+        update("field1","更新指定字段"),Query.build().filter("field2","=",2));
         
     delete:
         //删除指定表指定字段,query传null则清空表数据
